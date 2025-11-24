@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلاد عليا 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .birthday-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .photo-section {
+            padding: 30px 20px;
+            background: #f8f9fa;
+        }
+
+        .birthday-cake {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-text {
+            font-size: 1.3rem;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .controls {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ff6b6b;
+            border: 2px dashed #ff6b6b;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #fff5f7, #ffeef2);
+            margin: 20px;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #ff6b6b;
+            display: none;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: #495057;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            font-size: 1.4rem;
+            margin: 0 5px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: #ff6b6b;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* تأثيرات للهواتف */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .birthday-cake {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="birthday-icon">🎂</div>
+            <h1>كل سنة وأنتي طيبة 🎉</h1>
+            <p class="subtitle">يا سكر.. دامت أيامك كلها فرح وسعادة وراحة بال</p>
+        </div>
+
+        <div class="photo-section">
+            <div class="birthday-cake">🎂</div>
+            <p class="photo-text">صورة تهنئة عيد ميلاد</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="surpriseBtn">
+                <span>🎁</span>
+                افتح المفاجأة
+            </button>
+            <button class="btn btn-secondary" id="musicBtn">
+                <span>🎵</span>
+                تشغيل موسيقى
+            </button>
+            <button class="btn btn-secondary" id="downloadBtn">
+                <span>⬇️</span>
+                تحميل الصفحة
+            </button>
+        </div>
+
+        <div class="message-box" id="messageBox">
+            <p class="message-text">
+                <span class="heart">💗</span>
+                يا عليا… كل سنة وانتي أجمل! انتي فرحة لقلوبنا وكل يوم معاكي عيد.
+                <span class="heart">❤️</span>
+            </p>
+        </div>
+
+        <div class="footer">
+            ابعت اللينك دي لعليا وخليها تفتحه 🎈
+        </div>
+    </div>
+
+    <script>
+        // عناصر DOM
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const musicBtn = document.getElementById('musicBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const messageBox = document.getElementById('messageBox');
+
+        // حالة الموسيقى
+        let isMusicPlaying = false;
+        let audioContext = null;
+
+        // تأثير المفاجأة
+        surpriseBtn.addEventListener('click', function() {
+            // إظهار الرسالة
+            messageBox.style.display = 'block';
+            
+            // تأثير العيدان النارية
+            createConfetti();
+            
+            // صوت المفاجأة
+            playSurpriseSound();
+            
+            // اهتزاز بسيط
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        // تحكم بالموسيقى
+        musicBtn.addEventListener('click', function() {
+            if (!isMusicPlaying) {
+                playBirthdayMusic();
+                this.innerHTML = '<span>🔇</span> إيقاف الموسيقى';
+                isMusicPlaying = true;
+            } else {
+                stopMusic();
+                this.innerHTML = '<span>🎵</span> تشغيل موسيقى';
+                isMusicPlaying = false;
+            }
+        });
+
+        // تحميل الصفحة
+        downloadBtn.addEventListener('click', function() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'عيد_ميلاد_عليا.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // وظيفة العيدان النارية
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = (10 + Math.random() * 20) + 'px';
+                confetti.style.height = (10 + Math.random() * 20) + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                document.body.appendChild(confetti);
+                
+                const animation = confetti.animate([
+                    { transform: 'translateY(-100px) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${360 * (Math.random() > 0.5 ? 1 : -1)}deg)`, opacity: 0 }
+                ], {
+                    duration: 2000 + Math.random() * 3000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+
+        // صوت المفاجأة
+        function playSurpriseSound() {
+            try {
+                const context = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = context.createOscillator();
+                const gainNode = context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(context.destination);
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = 523.25; // C5
+                gainNode.gain.value = 0.1;
+                
+                oscillator.start();
+                
+                // تغيير النغمة
+                setTimeout(() => {
+                    oscillator.frequency.value = 659.25; // E5
+                }, 100);
+                
+                setTimeout(() => {
+                    oscillator.frequency.value = 783.99; // G5
+                }, 200);
+                
+                setTimeout(() => {
+                    oscillator.stop();
+                    context.close();
+                }, 500);
+            } catch (error) {
+                console.log('الصوت غير مدعوم في هذا المتصفح');
+            }
+        }
+
+        // موسيقى عيد الميلاد
+        function playBirthdayMusic() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const notes = [
+                    261.63, 261.63, 293.66, 261.63, 349.23, 329.63,
+                    261.63, 261.63, 293.66, 261.63, 392.00, 349.23
+                ];
+                
+                let time = audioContext.currentTime;
+                
+                notes.forEach((frequency, index) => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.type = 'triangle';
+                    oscillator.frequency.value = frequency;
+                    gainNode.gain.value = 0.1;
+                    
+                    gainNode.gain.setValueAtTime(0.1, time);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, time + 0.5);
+                    
+                    oscillator.start(time);
+                    oscillator.stop(time + 0.5);
+                    
+                    time += 0.5;
+                });
+            } catch (error) {
+                console.log('الموسيقى غير مدعومة في هذا المتصفح');
+            }
+        }
+
+        // إيقاف الموسيقى
+        function stopMusic() {
+            if (audioContext) {
+                audioContext.close();
+                audioContext = null;
+            }
+        }
+
+        // إضافة بعض العيدان النارية عند التحميل
+        window.addEventListener('load', () => {
+            setTimeout(createConfetti, 1000);
+        });
+    </script>
+</body>
+</html>
